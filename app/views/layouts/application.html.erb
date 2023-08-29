@@ -15,11 +15,12 @@
   <body>
     <%= render 'home/header'%>
     <div class="container">
+    <%if notice%>
+      <%=render 'layouts/alert'%>
+    <%end%>
         <%= yield %>
       <br>
-      <footer>
-      <a href="">1st Link </a><a href="">2st Link </a><a href="">3st Link </a>
-      </footer>
+     
     </div>
   </body>
 </html>
