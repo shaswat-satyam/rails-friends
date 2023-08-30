@@ -6,6 +6,7 @@
     <th scope="col">Email</th>
     <th scope="col">Phone</th>
     <th scope="col">Reddit</th>
+    <th scope="col">User Id</th>
     <th scope="col"></th>
     <th scope="col"></th>
     <th scope="col"></th>
@@ -18,9 +19,10 @@
       <td><%= friend.email%></td>
       <td><%= friend.phone%></td>
       <td><%= friend.reddit%></td>
+      <td><%= friend.user_id%></td>
       <td><%=link_to "Show",friend_path(friend)%> </td>
-      <td><%=link_to "Edit",edit_friend_path(friend)%></td>
-      <td><%=link_to "Delete",friend, data: { "turbo-method": :delete }%></td>
+        <td><%=link_to "Edit",edit_friend_path(friend)%></td>
+        <td><%=link_to "Delete",friend, data: { "turbo-method": :delete }%></td>
     </tr>
   <% end %>
   </tbody>

@@ -36,6 +36,10 @@
     <%= form.text_field :reddit, placeholder:"Reddit", class:"form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= form.number_field :user_id, id: :friend_user_id, value:current_user.id, type: :hidden, class:"form-control" %>
+  </div>
+
   <br>
   <div class="form-group">
     <%= form.submit class:'btn btn-secondary'%>
