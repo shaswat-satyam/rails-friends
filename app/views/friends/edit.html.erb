@@ -5,6 +5,7 @@
 <br>
 
 <div>
-  <%= link_to "Show this friend", @friend, class:"btn btn-secondary" %> |
-  <%= link_to "Back to friends", friends_path, class:"btn btn-black" %>
+  <%= link_to "Show this friend", @friend, class:"btn btn-secondary" %> 
+  <%= link_to "Back to friends", friends_path, class:"btn btn-primary" %>
+  <%= link_to "Delete", @friend, data: { "turbo-method": :delete }, class:"btn btn-danger" %>
 </div>

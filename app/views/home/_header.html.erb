@@ -8,10 +8,7 @@
     aria-controls="nav-contact" aria-selected="false"> 
       <%= link_to 'About Us', home_about_path, class:"nav-link"%> 
     </button>
-    <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" 
-    aria-controls="nav-contact" aria-selected="false"> 
-      <%= link_to 'Friends', friends_path, class:"nav-link"%> 
-    </button>
+   
     <% if user_signed_in? %>
     <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
     <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" 

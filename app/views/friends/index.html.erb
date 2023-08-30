@@ -1,32 +1,32 @@
-<div id="friends">
-  <table class ="table table-striped table-hover">
-  <thead class = thead-dark>
-    <th scope="col">First Name </th>
-    <th scope="col">Last Name</th>
-    <th scope="col">Email</th>
-    <th scope="col">Phone</th>
-    <th scope="col">Reddit</th>
-    <th scope="col">User Id</th>
-    <th scope="col"></th>
-    <th scope="col"></th>
-    <th scope="col"></th>
-  </thead>
-  <tbody>
-  <% @friends.each do |friend| %>
-    <tr>
-      <td scope="row"> <%= friend.first_name%> </td>
-      <td><%= friend.last_name%></td>
-      <td><%= friend.email%></td>
-      <td><%= friend.phone%></td>
-      <td><%= friend.reddit%></td>
-      <td><%= friend.user_id%></td>
-      <td><%=link_to "Show",friend_path(friend)%> </td>
-        <td><%=link_to "Edit",edit_friend_path(friend)%></td>
-        <td><%=link_to "Delete",friend, data: { "turbo-method": :delete }%></td>
-    </tr>
-  <% end %>
-  </tbody>
-  </table>
-</div>
+<% if user_signed_in? %>
+  <div id="friends">
+    <table class ="table table-striped table-hover">
+    <thead class = thead-dark>
+      <th scope="col">Name </th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Reddit</th>
+      <th scope="col"></th>
+    </thead>
+    <tbody>
+    <% @friends.each do |friend| %>
+    <% if friend.user == current_user%>
+      <tr>
+        <td scope="row">
+        <%=link_to friend.first_name + ' ' + friend.last_name ,friend%>
+        <td><%= friend.email%></td>
+        <td><%= friend.phone%></td>
+        <td><%= friend.reddit%></td>
+        <td><%=link_to "Delete",friend, data: { "turbo-method": :delete }, class:"btn btn-outline-danger btn-sm"%></td>
+      </tr>
+    <%end%>
+    <% end %>
+    </tbody>
+    </table>
+  </div>
 
-<%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+  <%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+<%else%>
+  <h1>This is my Rails page</h1>
+Hello World!
+<%end%>
