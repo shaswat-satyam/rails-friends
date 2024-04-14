@@ -1,24 +1,10 @@
-# README
+# Rails Friends
+This is a dynamic webpage to maintain a friend's list and share posts among themselves.
+This is a project for The Odin Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Stack
+HTML,CSS,JavaScript, Ruby, Rails.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Instructions
+1) Clone the repository
+2) Use the command rails s
